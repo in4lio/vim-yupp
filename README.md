@@ -9,11 +9,11 @@ Use your plugin manager of choice.
 - [Pathogen](https://github.com/tpope/vim-pathogen)
   - `git clone https://github.com/in4lio/vim-yupp.git ~/.vim/bundle/vim-yupp`
 - [Vundle](https://github.com/gmarik/vundle)
-  - Add `Plugin 'in4lio/vim-yupp'` to .vimrc
+  - Add `Plugin 'in4lio/vim-yupp'` to ".vimrc"
   - Run `:PluginInstall`
 - [NeoBundle](https://github.com/Shougo/neobundle.vim)
-  - Add `NeoBundle 'in4lio/vim-yupp'` to .vimrc
+  - Add `NeoBundle 'in4lio/vim-yupp'` to ".vimrc"
   - Run `:NeoBundleInstall`
 - [vim-plug](https://github.com/junegunn/vim-plug)
-  - Add `Plug 'in4lio/vim-yupp'` to .vimrc
+  - Add `Plug 'in4lio/vim-yupp'` to ".vimrc"
   - Run `:PlugInstall`
