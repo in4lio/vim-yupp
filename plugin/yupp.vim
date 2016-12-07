@@ -31,7 +31,7 @@ nnoremap <silent> <Plug>(yupp-browse)  :<C-u>call yupp#browse()<Return>
 onoremap <silent> <Plug>(yupp-browse)  <Esc>:call yupp#browse()<Return>
 vnoremap <silent> <Plug>(yupp-browse)  <Esc>:call yupp#browse()<Return>
 
-nmap <Leader>Y  <Plug>(yupp-browse)
+nmap <Leader>y  <Plug>(yupp-browse)
 
 let g:loaded_yupp = 1
 

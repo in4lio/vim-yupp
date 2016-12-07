@@ -44,6 +44,9 @@ endfunction
 
 function! yupp#browse()
   let fn = expand('%')
+  if empty(fn)
+    return
+  endif
 
   if has_key(s:file_jump, fn)
     " familiar file
