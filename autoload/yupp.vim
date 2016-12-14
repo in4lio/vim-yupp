@@ -68,6 +68,16 @@ function! yupp#browse()
   " unfamiliar file
   let s:file_state[fn] = s:STATE_SKIP
 
+  " check browse (*.json)
+  let fn_json = fn . '.json'
+
+  if filereadable(fn_json)
+    " browse file exists
+    let json = readfile(fn_json)
+    let s:file_state[fn] = s:STATE_FRUIT
+    return
+  endif
+
   " check original file
   let b = fnamemodify(fn, ':r')
   let e = fnamemodify(fn, ':e')
