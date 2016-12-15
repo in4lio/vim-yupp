@@ -28,6 +28,7 @@ let s:STATE_ORIGIN    = 2
 
 let s:file_state = {}
 let s:file_jump  = {}
+let s:file_data  = {}
 
 
 function! yupp#_switch_to(fn)
@@ -68,14 +69,16 @@ function! yupp#browse()
   " unfamiliar file
   let s:file_state[fn] = s:STATE_SKIP
 
-  " check browse (*.json)
-  let fn_json = fn . '.json'
+  if v:version >= 800
+    " check browse (*.json)
+    let fn_json = fn . '.json'
 
-  if filereadable(fn_json)
-    " browse file exists
-    let json = readfile(fn_json)
-    let s:file_state[fn] = s:STATE_FRUIT
-    return
+    if filereadable(fn_json)
+      " browse file exists
+      let s:file_data[fn] = json_decode(join(readfile(fn_json)))
+      let s:file_state[fn] = s:STATE_FRUIT
+      return
+    endif
   endif
 
   " check original file
