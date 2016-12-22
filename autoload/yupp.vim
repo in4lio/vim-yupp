@@ -29,7 +29,7 @@ let s:STATE_ORIGIN    = 2
 let s:file_state = {}
 let s:file_jump  = {}
 let s:file_data  = {}
-
+let s:file_mtime = {}  " time of last modification
 
 function! yupp#_switch_to(fn)
   let n = bufnr(printf('^%s$', a:fn))
@@ -77,6 +77,7 @@ function! yupp#browse()
       " browse file exists
       let s:file_data[fn] = json_decode(join(readfile(fn_json)))
       let s:file_state[fn] = s:STATE_FRUIT
+      let s:file_mtime[fn] = getmtime(fn)
       return
     endif
   endif
@@ -109,6 +110,14 @@ function! yupp#browse()
     let s:file_jump[origin] = fn
     call yupp#_switch_to(origin)
   endif
+endfunction
+
+function! yupp#cleanup()
+  let fn = expand('%')
+  if empty(fn)
+    return
+  endif
+
 endfunction
 
 " vim: foldmethod=marker
