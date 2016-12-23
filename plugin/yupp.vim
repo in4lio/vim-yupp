@@ -25,6 +25,8 @@ if exists('g:loaded_yupp')
   finish
 endif
 
+autocmd BufDelete * call yupp#cleanup()
+
 cnoremap <silent> <Plug>(yupp-browse)  <C-c>:call yupp#browse()<Return>
 inoremap <silent> <Plug>(yupp-browse)  <Esc>:call yupp#browse()<Return>
 nnoremap <silent> <Plug>(yupp-browse)  :<C-u>call yupp#browse()<Return>
