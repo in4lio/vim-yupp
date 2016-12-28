@@ -118,8 +118,6 @@ function! yupp#cleanup()
     return
   endif
 
-  echom 'cleanup ' . fn
-
   if has_key(s:file_jump, fn)
     " familiar file
     let state = s:file_state[fn]
@@ -133,12 +131,11 @@ function! yupp#cleanup()
     elseif state == s:STATE_ORIGIN
 
     elseif state == s:STATE_FRUIT
-
+      call remove(s:file_data, fn)
+      call remove(s:file_state, fn)
+      call remove(s:file_mtime, fn)
     endif
-    return
   endif
-
-
 endfunction
 
 " vim: foldmethod=marker
