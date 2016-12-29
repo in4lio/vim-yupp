@@ -32,6 +32,11 @@ let s:file_data  = {}
 let s:file_mtime = {}  " time of last modification
 
 function! yupp#_switch_to(fn)
+  if &modified
+    " current buffer is modified
+    return
+  endif
+
   let n = bufnr(printf('^%s$', a:fn))
   if !buflisted(n)
     " open file
@@ -112,6 +117,7 @@ function! yupp#browse()
   endif
 endfunction
 
+
 function! yupp#cleanup()
   let fn = expand('%')
   if empty(fn)
@@ -135,6 +141,19 @@ function! yupp#cleanup()
       call remove(s:file_state, fn)
       call remove(s:file_mtime, fn)
     endif
+  endif
+endfunction
+
+
+function! yupp#reload()
+  let fn = expand('<afile>')
+  if empty(fn)
+    return
+  endif
+
+  if has_key(s:file_jump, fn)
+    " familiar file
+    echom 'Changed ' . fn
   endif
 endfunction
 
