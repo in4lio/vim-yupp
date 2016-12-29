@@ -17,3 +17,7 @@ Use your plugin manager of choice.
 - [vim-plug](https://github.com/junegunn/vim-plug)
   - Add `Plug 'in4lio/vim-yupp'` to ".vimrc"
   - Run `:PlugInstall`
+
+### How to use
+
+Default **Normal** mode mapping for browsing is `<leader>y`.
