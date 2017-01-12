@@ -22,4 +22,4 @@ Use your plugin manager of choice:
 
 ### How to use
 
-Default **Normal** mode mapping for browsing is **<LEADER>Y**.
+Default **Normal** mode mapping for browsing is **&lt;LEADER&gt;Y**.
