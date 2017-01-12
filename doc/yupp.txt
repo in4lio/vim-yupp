@@ -30,7 +30,7 @@ The plugin requires Vim 8.0 or later with "byte_offset" support.
 ___       ___________________________________________________________________ ~
 ___ USAGE ___________________________________________________________________ ~
                                                                    *yupp-usage*
-Default |Normal| mode mapping for browsing is <leader>y.
+Default |Normal| mode mapping for browsing is |<LEADER>Y|.
 
 ___         _________________________________________________________________ ~
 ___ LICENCE _________________________________________________________________ ~
